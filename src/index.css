@@ -758,10 +758,7 @@ ul, ol {
   box-shadow: var(--shadow-md);
 }
 
-/* ---- Responsive Header ---- */
-@media (min-width: 640px) {
-  .topbar-item.email { display: flex; }
-}
+
 
 @media (max-width: 419px) {
   .topbar-right { display: none; }
@@ -2126,13 +2123,9 @@ ul, ol {
   background: rgba(228, 226, 222, 0.2);
 }
 
-/* ---- Topbar email hide on mobile ---- */
+/* ---- Topbar email ---- */
 .topbar-item.email {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .topbar-item.email { display: flex; }
+  display: flex;
 }
 
 /* ---- main content offset ---- */

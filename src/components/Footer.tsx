@@ -58,10 +58,6 @@ export default function Footer() {
               </div>
             </div>
             <div className="footer-contact-item">
-              <span className="material-symbols-outlined">call</span>
-              <span>+65 6791 2288</span>
-            </div>
-            <div className="footer-contact-item">
               <span className="material-symbols-outlined">mail</span>
               <a href="mailto:admin@sm-eng.co" style={{ color: 'inherit', textDecoration: 'none' }}>admin@sm-eng.co</a>
             </div>

@@ -104,13 +104,6 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact-info-item">
-              <span className="material-symbols-outlined">call</span>
-              <div>
-                <span className="info-label">Telephone</span>
-                <a href="tel:+6567912288" className="info-value" style={{ display: 'block', color: 'var(--surface-bright)' }}>+65 6791 2288</a>
-              </div>
-            </div>
 
             <div className="contact-info-item">
               <span className="material-symbols-outlined">mail</span>

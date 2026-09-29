@@ -312,10 +312,6 @@ export default function Home() {
                 or facilities maintenance anywhere across Singapore.
               </p>
               <div className="cta-contacts">
-                <a href="tel:+6567912288">
-                  <span className="material-symbols-outlined" style={{ fontSize: 20 }}>phone_in_talk</span>
-                  +65 6791 2288
-                </a>
                 <a href="mailto:admin@sm-eng.co">
                   <span className="material-symbols-outlined" style={{ fontSize: 20 }}>mark_email_read</span>
                   admin@sm-eng.co

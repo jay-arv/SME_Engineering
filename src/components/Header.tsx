@@ -40,10 +40,6 @@ export default function Header() {
         <div className="topbar">
           <div className="container topbar-inner">
             <div className="topbar-left">
-              <a href="tel:+6567912288" className="topbar-item">
-                <span className="material-symbols-outlined">call</span>
-                <span>+65 6791 2288</span>
-              </a>
               <a href="mailto:admin@sm-eng.co" className="topbar-item email">
                 <span className="material-symbols-outlined">mail</span>
                 <span>admin@sm-eng.co</span>
@@ -131,9 +127,9 @@ export default function Header() {
             <span className="material-symbols-outlined">request_quote</span>
             Request a Quote
           </button>
-          <a href="tel:+6567912288" className="drawer-cta">
-            <span className="material-symbols-outlined">call</span>
-            Quick Call
+          <a href="mailto:admin@sm-eng.co" className="drawer-cta">
+            <span className="material-symbols-outlined">mail</span>
+            Email Us
           </a>
         </div>
       </div>
