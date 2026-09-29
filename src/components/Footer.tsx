@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
             <div className="footer-contact-item">
               <span className="material-symbols-outlined">mail</span>
-              <span>ops@srimaruthi.com.sg</span>
+              <a href="mailto:admin@sm-eng.co" style={{ color: 'inherit', textDecoration: 'none' }}>admin@sm-eng.co</a>
             </div>
             <div className="footer-contact-item">
               <span className="material-symbols-outlined">schedule</span>

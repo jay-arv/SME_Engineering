@@ -45,8 +45,8 @@ export default function QuoteModal({ open, onClose }: QuoteModalProps) {
                 <input className="form-input" type="text" placeholder="Full name" required />
               </div>
               <div className="form-group">
-                <label className="form-label">Phone Number (SG)</label>
-                <input className="form-input" type="tel" placeholder="+65 ...." required />
+                <label className="form-label">Email Address</label>
+                <input className="form-input" type="email" placeholder="name@company.com" required />
               </div>
             </div>
             <div className="form-group">
@@ -75,7 +75,7 @@ export default function QuoteModal({ open, onClose }: QuoteModalProps) {
             </div>
             <h4 className="headline-sm" style={{ color: 'var(--primary)' }}>Request Received</h4>
             <p className="body-sm text-on-surface-variant" style={{ marginTop: 8 }}>
-              Our engineering estimator will examine your request and follow up directly via email and phone.
+              Our engineering estimator will examine your request and follow up directly via email.
             </p>
           </div>
         )}

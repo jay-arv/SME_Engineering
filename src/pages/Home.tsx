@@ -316,9 +316,9 @@ export default function Home() {
                   <span className="material-symbols-outlined" style={{ fontSize: 20 }}>phone_in_talk</span>
                   +65 6791 2288
                 </a>
-                <a href="mailto:ops@srimaruthi.com.sg">
+                <a href="mailto:admin@sm-eng.co">
                   <span className="material-symbols-outlined" style={{ fontSize: 20 }}>mark_email_read</span>
-                  ops@srimaruthi.com.sg
+                  admin@sm-eng.co
                 </a>
               </div>
             </div>

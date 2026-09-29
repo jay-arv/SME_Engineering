@@ -49,10 +49,6 @@ export default function Contact() {
                 </div>
                 <div className="form-row">
                   <div className="form-group">
-                    <label className="form-label">Phone Number (SG)</label>
-                    <input className="form-input" type="tel" placeholder="+65 ...." required />
-                  </div>
-                  <div className="form-group">
                     <label className="form-label">Service Required</label>
                     <div className="form-select-wrap">
                       <select className="form-select form-input">
@@ -66,10 +62,10 @@ export default function Contact() {
                       <span className="material-symbols-outlined form-select-icon" aria-hidden="true">expand_more</span>
                     </div>
                   </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Project Location</label>
-                  <input className="form-input" type="text" placeholder="e.g. Tuas Yard, Jurong Island, Changi Depot" />
+                  <div className="form-group">
+                    <label className="form-label">Project Location</label>
+                    <input className="form-input" type="text" placeholder="e.g. Tuas Yard, Jurong Island, Changi Depot" />
+                  </div>
                 </div>
                 <div className="form-group">
                   <label className="form-label">Brief Scope Description</label>
@@ -87,7 +83,7 @@ export default function Contact() {
                 </div>
                 <h4 className="headline-sm text-primary">Enquiry Received Successfully</h4>
                 <p className="body-sm text-on-surface-variant" style={{ marginTop: 8, maxWidth: 380, marginLeft: 'auto', marginRight: 'auto' }}>
-                  Our engineering estimator will examine your request and follow up directly via email and phone within 24 hours.
+                  Our engineering estimator will examine your request and follow up directly via email within 24 hours.
                 </p>
                 <button className="btn btn-outline" style={{ marginTop: 20 }} onClick={() => setSubmitted(false)}>
                   Submit Another Enquiry
@@ -120,7 +116,7 @@ export default function Contact() {
               <span className="material-symbols-outlined">mail</span>
               <div>
                 <span className="info-label">Email</span>
-                <a href="mailto:ops@srimaruthi.com.sg" className="info-value" style={{ display: 'block', color: 'var(--surface-bright)' }}>ops@srimaruthi.com.sg</a>
+                <a href="mailto:admin@sm-eng.co" className="info-value" style={{ display: 'block', color: 'var(--surface-bright)' }}>admin@sm-eng.co</a>
               </div>
             </div>
 

@@ -44,9 +44,9 @@ export default function Header() {
                 <span className="material-symbols-outlined">call</span>
                 <span>+65 6791 2288</span>
               </a>
-              <a href="mailto:ops@srimaruthi.com.sg" className="topbar-item email">
+              <a href="mailto:admin@sm-eng.co" className="topbar-item email">
                 <span className="material-symbols-outlined">mail</span>
-                <span>ops@srimaruthi.com.sg</span>
+                <span>admin@sm-eng.co</span>
               </a>
               <div className="topbar-item topbar-uen">
                 <span className="material-symbols-outlined">badge</span>
