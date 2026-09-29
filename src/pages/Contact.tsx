@@ -1,11 +1,25 @@
 import { useState } from 'react'
+import { submitToWeb3Forms } from '../utils/web3forms'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setErrorMsg('')
+
+    const formData = new FormData(e.currentTarget)
+    const result = await submitToWeb3Forms(formData)
+
+    setSubmitting(false)
+    if (result.success) {
+      setSubmitted(true)
+    } else {
+      setErrorMsg(result.message || 'Submission failed. Please email us directly at admin@sm-eng.co.')
+    }
   }
 
   return (
@@ -33,47 +47,60 @@ export default function Contact() {
 
             {!submitted ? (
               <form onSubmit={handleSubmit}>
+                <input type="hidden" name="subject" value="New Tender Enquiry - Sri Maruthi Engineering" />
+                <input type="hidden" name="from_name" value="Sri Maruthi Engineering Website" />
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                 <div className="form-group">
                   <label className="form-label">Company / Organization Name</label>
-                  <input className="form-input" type="text" placeholder="e.g. Seatrium, Keppel, or MCST Name" required />
+                  <input className="form-input" name="company" type="text" placeholder="e.g. Seatrium, Keppel, or MCST Name" required />
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Contact Person</label>
-                    <input className="form-input" type="text" placeholder="Full name" required />
+                    <input className="form-input" name="name" type="text" placeholder="Full name" required />
                   </div>
                   <div className="form-group">
                     <label className="form-label">Email Address</label>
-                    <input className="form-input" type="email" placeholder="name@company.com" required />
+                    <input className="form-input" name="email" type="email" placeholder="name@company.com" required />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Service Required</label>
                     <div className="form-select-wrap">
-                      <select className="form-select form-input">
-                        <option value="civil">Civil &amp; Concrete Infrastructure</option>
-                        <option value="marine">Marine Vessel Outfitting &amp; Shipyard</option>
-                        <option value="fire">Sprinkler &amp; Fire Protection Systems</option>
-                        <option value="waterproofing">Waterproofing &amp; Injection Grouting</option>
-                        <option value="coatings">Blasting &amp; Protective Coatings</option>
-                        <option value="other">Turnaround Plant Maintenance</option>
+                      <select className="form-select form-input" name="service">
+                        <option value="Civil & Concrete Infrastructure">Civil &amp; Concrete Infrastructure</option>
+                        <option value="Marine Vessel Outfitting & Shipyard">Marine Vessel Outfitting &amp; Shipyard</option>
+                        <option value="Sprinkler & Fire Protection Systems">Sprinkler &amp; Fire Protection Systems</option>
+                        <option value="Waterproofing & Injection Grouting">Waterproofing &amp; Injection Grouting</option>
+                        <option value="Blasting & Protective Coatings">Blasting &amp; Protective Coatings</option>
+                        <option value="Turnaround Plant Maintenance">Turnaround Plant Maintenance</option>
                       </select>
                       <span className="material-symbols-outlined form-select-icon" aria-hidden="true">expand_more</span>
                     </div>
                   </div>
                   <div className="form-group">
                     <label className="form-label">Project Location</label>
-                    <input className="form-input" type="text" placeholder="e.g. Tuas Yard, Jurong Island, Changi Depot" />
+                    <input className="form-input" name="location" type="text" placeholder="e.g. Tuas Yard, Jurong Island, Changi Depot" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="form-label">Brief Scope Description</label>
-                  <textarea className="form-textarea form-input" placeholder="Provide site details, BOQ specifics, expected timeline, or key deliverables..." rows={4} />
+                  <textarea className="form-textarea form-input" name="message" placeholder="Provide site details, BOQ specifics, expected timeline, or key deliverables..." rows={4} />
                 </div>
-                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>send</span>
-                  Submit Tender Enquiry
+
+                {errorMsg && (
+                  <div style={{ background: '#fee2e2', color: '#b91c1c', border: '1px solid #f87171', padding: '10px 14px', borderRadius: 8, fontSize: 13, marginBottom: 16 }}>
+                    {errorMsg}
+                  </div>
+                )}
+
+                <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={submitting}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
+                    {submitting ? 'hourglass_top' : 'send'}
+                  </span>
+                  {submitting ? 'Transmitting Enquiry...' : 'Submit Tender Enquiry'}
                 </button>
               </form>
             ) : (
